@@ -23,6 +23,15 @@ namespace MathematicalLinguisticsTask3
         public MainWindow()
         {
             InitializeComponent();
+            int tapeSize = 10;
+            for (int i = 0; i < tapeSize; i++)
+                gridTape.Columns.Add(
+                    new DataGridTextColumn()
+                    {
+                        Width = new DataGridLength(1,DataGridLengthUnitType.Star)
+                    });
+
+
         }
     }
 }
