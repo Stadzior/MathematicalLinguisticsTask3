@@ -25,5 +25,23 @@ namespace MathematicalLinguisticsTask3
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            (DataContext as TuringMachine).Tapes.Add(
+                new Tape()
+                {
+                    Position1 = 0,
+                    Position2 = 0,
+                    Position3 = 0,
+                    Position4 = 0,
+                    Position5 = 0,
+                    Position6 = 0,
+                    Position7 = 0,
+                    Position8 = 0,
+                    Position9 = 0,
+                    Position10 = 0
+                });
+        }
     }
 }

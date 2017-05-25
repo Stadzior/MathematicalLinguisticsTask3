@@ -10,7 +10,7 @@ namespace MathematicalLinguisticsTask3
     public class TuringMachine
     {
         public ObservableCollection<Tape> Tapes { get; set; }
-
+        public string CurrentState { get; set; } = "Q0";
         public TuringMachine()
         {
             Tapes = new ObservableCollection<Tape>()
