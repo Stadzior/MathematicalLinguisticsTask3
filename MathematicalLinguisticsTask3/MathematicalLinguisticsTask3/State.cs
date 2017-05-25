@@ -18,6 +18,7 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        
+        public StepInfo StepInfoForOne { get; set; }
+        public StepInfo StepInfoForZero { get; set; }
     }
 }

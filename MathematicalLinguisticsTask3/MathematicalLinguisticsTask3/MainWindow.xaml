@@ -22,6 +22,16 @@
             Content="Step"
             FontSize="24" />
         <Button
+            x:Name="btnInsertValue"
+            Width="123"
+            Height="25"
+            Margin="219,146,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnInsertValue_Click"
+            Content="Insert value"
+            FontSize="18" />
+        <Button
             x:Name="btnStartStop"
             Width="132"
             Height="58"
@@ -32,7 +42,8 @@
             Content="Start/Stop"
             FontSize="24" />
         <TextBox
-            Width="53"
+            x:Name="txtState"
+            Width="39"
             Height="36"
             Margin="10,135,0,0"
             HorizontalAlignment="Left"
@@ -251,5 +262,15 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <TextBox
+            x:Name="txtValue"
+            Width="123"
+            Height="28"
+            Margin="219,113,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontSize="24"
+            Text="{Binding CurrentState.Name}"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>

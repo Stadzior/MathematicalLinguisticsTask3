@@ -22,6 +22,10 @@ namespace MathematicalLinguisticsTask3
     /// </summary>
     public partial class MainWindow : Window
     {
+        public TuringMachine TuringMachine
+        {
+            get { return (DataContext as TuringMachine); }
+        }
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +38,17 @@ namespace MathematicalLinguisticsTask3
 
         private void btnStep_Click(object sender, RoutedEventArgs e)
         {
+            TuringMachine.
+        }
+
+        private void btnInsertValue_Click(object sender, RoutedEventArgs e)
+        {
+            int value;
+            if (int.TryParse(txtValue.Text, out value) && value < 1024 || value > -1)
+            {
+                MessageBox.Show("Inputted text should be an integer between 0 - 1023.", "Nope");
+            }
+\
         }
     }
 }
