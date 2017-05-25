@@ -7,35 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="MainWindow"
     Width="647"
-    Height="280.677"
+    Height="214.677"
     DataContext="{StaticResource TuringMachine}"
     mc:Ignorable="d">
     <Grid Margin="0,0,2,0">
         <Button
+            x:Name="btnStep"
             Width="123"
             Height="58"
-            Margin="265,118,0,0"
+            Margin="367,113,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            Click="btnStep_Click"
             Content="Step"
             FontSize="24" />
         <Button
+            x:Name="btnStartStop"
             Width="132"
             Height="58"
-            Margin="393,118,0,0"
+            Margin="495,113,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Click="Button_Click"
+            Click="btnStartStop_Click"
             Content="Start/Stop"
             FontSize="24" />
         <TextBox
-            Width="99"
+            Width="53"
             Height="36"
             Margin="10,135,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="24"
-            Text="{Binding CurrentState}"
+            Text="{Binding CurrentState.Name}"
             TextWrapping="Wrap" />
         <DataGrid
             x:Name="gridTape"
@@ -48,19 +51,202 @@
             GridLinesVisibility="Vertical"
             HeadersVisibility="None"
             ItemsSource="{Binding Tapes}" />
+        <Canvas>
+            <Image
+                x:Name="imgHead10"
+                Canvas.Left="441"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead8"
+                Canvas.Left="324"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead7"
+                Canvas.Left="266"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead6"
+                Canvas.Left="208"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead5"
+                Canvas.Left="150"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead4"
+                Canvas.Left="91"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead3"
+                Canvas.Left="32"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead2"
+                Canvas.Left="-28"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                x:Name="imgHead1"
+                Canvas.Left="-86"
+                Canvas.Top="10"
+                Width="38"
+                Height="32"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                RenderTransformOrigin="0.5,0.5"
+                Source="Assets/indeks.png"
+                Visibility="Hidden">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform X="90" />
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Canvas>
         <Image
+            x:Name="imgHead9"
             Width="38"
             Height="32"
-            Margin="438,10,0,0"
+            Margin="385,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             RenderTransformOrigin="0.5,0.5"
-            Source="Assets/indeks.png">
+            Source="Assets/indeks.png"
+            Visibility="Hidden">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
                     <SkewTransform />
-                    <RotateTransform Angle="90" />
+                    <RotateTransform />
                     <TranslateTransform X="90" />
                 </TransformGroup>
             </Image.RenderTransform>

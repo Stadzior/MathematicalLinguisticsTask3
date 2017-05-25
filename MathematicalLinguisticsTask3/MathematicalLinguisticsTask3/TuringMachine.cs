@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 
 namespace MathematicalLinguisticsTask3
 {
-    public class TuringMachine
+    public class TuringMachine : NotifyPropertyChangedBase
     {
         public ObservableCollection<Tape> Tapes { get; set; }
-        public string CurrentState { get; set; } = "Q0";
+
+        private State _currentState;
+        public State CurrentState
+        {
+            get { return _currentState; }
+            set
+            {
+                SetField(ref _currentState, value);
+            }
+        }
+
         public TuringMachine()
         {
             Tapes = new ObservableCollection<Tape>()
@@ -29,6 +39,10 @@ namespace MathematicalLinguisticsTask3
                     Position10 = 0
                 }
             };
+
+
         }
+
+        public void MoveHead(StepInfo stepInfo)
     }
 }

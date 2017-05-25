@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -26,22 +27,13 @@ namespace MathematicalLinguisticsTask3
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnStartStop_Click(object sender, RoutedEventArgs e)
         {
-            (DataContext as TuringMachine).Tapes.Add(
-                new Tape()
-                {
-                    Position1 = 0,
-                    Position2 = 0,
-                    Position3 = 0,
-                    Position4 = 0,
-                    Position5 = 0,
-                    Position6 = 0,
-                    Position7 = 0,
-                    Position8 = 0,
-                    Position9 = 0,
-                    Position10 = 0
-                });
+            
+        }
+
+        private void btnStep_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
