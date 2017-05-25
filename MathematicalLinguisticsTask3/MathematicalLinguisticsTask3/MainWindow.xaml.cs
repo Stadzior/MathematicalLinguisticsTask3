@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,18 +21,11 @@ namespace MathematicalLinguisticsTask3
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private DataTable tapeSource;
         public MainWindow()
         {
             InitializeComponent();
-            int tapeSize = 10;
-            for (int i = 0; i < tapeSize; i++)
-                gridTape.Columns.Add(
-                    new DataGridTextColumn()
-                    {
-                        Width = new DataGridLength(1,DataGridLengthUnitType.Star)
-                    });
-
-
         }
     }
 }
