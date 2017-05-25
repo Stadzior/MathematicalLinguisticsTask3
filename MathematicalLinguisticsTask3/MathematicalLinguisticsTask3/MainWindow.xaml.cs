@@ -45,10 +45,20 @@ namespace MathematicalLinguisticsTask3
         {
             int value;
             if (int.TryParse(txtValue.Text, out value) && value < 1024 || value > -1)
-            {
+                InputValue(value);
+            else
                 MessageBox.Show("Inputted text should be an integer between 0 - 1023.", "Nope");
+        }
+
+        private void InputValue(int value)
+        {
+            List<int> result = new List<int>();
+
+            while(value == 0)
+            {
+                result.Add(value % 2);
+                value = (int)Math.Floor((decimal)value / 2);
             }
-\
         }
     }
 }
