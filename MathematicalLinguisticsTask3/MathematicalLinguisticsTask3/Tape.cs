@@ -8,8 +8,8 @@ namespace MathematicalLinguisticsTask3
 {
     public class Tape : NotifyPropertyChangedBase
     {
-        private Position _position1;
-        public Position Position1
+        private int _position1;
+        public int Position1
         {
             get { return _position1; }
             set
@@ -18,8 +18,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position2;
-        public Position Position2
+        private int _position2;
+        public int Position2
         {
             get { return _position2; }
             set
@@ -29,8 +29,8 @@ namespace MathematicalLinguisticsTask3
         }
 
 
-        private Position _position3;
-        public Position Position3
+        private int _position3;
+        public int Position3
         {
             get { return _position3; }
             set
@@ -39,8 +39,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position4;
-        public Position Position4
+        private int _position4;
+        public int Position4
         {
             get { return _position4; }
             set
@@ -49,8 +49,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position5;
-        public Position Position5
+        private int _position5;
+        public int Position5
         {
             get { return _position5; }
             set
@@ -59,8 +59,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position6;
-        public Position Position6
+        private int _position6;
+        public int Position6
         {
             get { return _position6; }
             set
@@ -69,8 +69,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position7;
-        public Position Position7
+        private int _position7;
+        public int Position7
         {
             get { return _position7; }
             set
@@ -79,8 +79,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position8;
-        public Position Position8
+        private int _position8;
+        public int Position8
         {
             get { return _position8; }
             set
@@ -89,8 +89,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position9;
-        public Position Position9
+        private int _position9;
+        public int Position9
         {
             get { return _position9; }
             set
@@ -99,8 +99,8 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private Position _position10;
-        public Position Position10
+        private int _position10;
+        public int Position10
         {
             get { return _position10; }
             set

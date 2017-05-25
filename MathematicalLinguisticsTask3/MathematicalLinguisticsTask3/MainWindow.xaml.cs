@@ -21,8 +21,6 @@ namespace MathematicalLinguisticsTask3
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        private DataTable tapeSource;
         public MainWindow()
         {
             InitializeComponent();

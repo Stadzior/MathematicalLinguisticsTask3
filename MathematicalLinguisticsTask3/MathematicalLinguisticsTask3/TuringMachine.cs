@@ -7,17 +7,28 @@ using System.Threading.Tasks;
 
 namespace MathematicalLinguisticsTask3
 {
-    public class TuringMachine : NotifyPropertyChangedBase
+    public class TuringMachine
     {
-        private Tape _tape;
-        public Tape Tape
-        {
-            get { return _tape; }
-            set
-            {
-                SetField(ref _tape, value);
-            }
-        }
+        public ObservableCollection<Tape> Tapes { get; set; }
 
+        public TuringMachine()
+        {
+            Tapes = new ObservableCollection<Tape>()
+            {
+                new Tape()
+                {
+                    Position1 = 0,
+                    Position2 = 0,
+                    Position3 = 0,
+                    Position4 = 0,
+                    Position5 = 0,
+                    Position6 = 0,
+                    Position7 = 0,
+                    Position8 = 0,
+                    Position9 = 0,
+                    Position10 = 0
+                }
+            };
+        }
     }
 }

@@ -55,7 +55,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="NotifyPropertyChangedBase.cs" />
-    <Compile Include="Position.cs" />
     <Compile Include="Tape.cs" />
     <Compile Include="TuringMachine.cs" />
     <Page Include="MainWindow.xaml">
