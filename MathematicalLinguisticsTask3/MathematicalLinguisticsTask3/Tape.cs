@@ -8,6 +8,79 @@ namespace MathematicalLinguisticsTask3
 {
     public class Tape : NotifyPropertyChangedBase
     {
+        public readonly int VisibleSize = 10;
+
+        public int this[int index]
+        {
+            get
+            {
+                switch (index)
+                {
+                    case 1:
+                        return Position1;
+                    case 2:
+                        return Position2;
+                    case 3:
+                        return Position3;
+                    case 4:
+                        return Position4;
+                    case 5:
+                        return Position5;
+                    case 6:
+                        return Position6;
+                    case 7:
+                        return Position7;
+                    case 8:
+                        return Position8;
+                    case 9:
+                        return Position9;
+                    case 10:
+                        return Position10;
+                    default:
+                        return -1;
+                }
+            }
+
+            set
+            {
+                switch (index)
+                {
+                    case 1:
+                        Position1 = value;
+                        break;
+                    case 2:
+                        Position2 = value;
+                        break;
+                    case 3:
+                        Position3 = value;
+                        break;
+                    case 4:
+                        Position4 = value;
+                        break;
+                    case 5:
+                        Position5 = value;
+                        break;
+                    case 6:
+                        Position6 = value;
+                        break;
+                    case 7:
+                        Position7 = value;
+                        break;
+                    case 8:
+                        Position8 = value;
+                        break;
+                    case 9:
+                        Position9 = value;
+                        break;
+                    case 10:
+                        Position10 = value;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
         private int _position1;
         public int Position1
         {
@@ -107,6 +180,20 @@ namespace MathematicalLinguisticsTask3
             {
                 SetField(ref _position10, value);
             }
+        }
+
+        public Tape()
+        {
+            Position1 = 0;
+            Position2 = 0;
+            Position3 = 0;
+            Position4 = 0;
+            Position5 = 0;
+            Position6 = 0;
+            Position7 = 0;
+            Position8 = 0;
+            Position9 = 0;
+            Position10 = 0;
         }
     }
 }

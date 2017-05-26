@@ -10,6 +10,7 @@ namespace MathematicalLinguisticsTask3
     public class TuringMachine : NotifyPropertyChangedBase
     {
         public ObservableCollection<Tape> Tapes { get; set; }
+        public Tape Tape { get; }
         public ObservableCollection<State> States { get; set; }
         private State _currentState;
         public State CurrentState
@@ -31,93 +32,10 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        public int CurrentPositionValue
-        {
-            get
-            {
-                switch (_headPosition)
-                {
-                    case 1:
-                        return Tapes[0].Position1;
-                    case 2:
-                        return Tapes[0].Position2;
-                    case 3:
-                        return Tapes[0].Position3;
-                    case 4:
-                        return Tapes[0].Position4;
-                    case 5:
-                        return Tapes[0].Position5;
-                    case 6:
-                        return Tapes[0].Position6;
-                    case 7:
-                        return Tapes[0].Position7;
-                    case 8:
-                        return Tapes[0].Position8;
-                    case 9:
-                        return Tapes[0].Position9;
-                    case 10:
-                        return Tapes[0].Position10;
-                    default:
-                        return -1;
-                }
-            }
-
-            set
-            {
-                switch (_headPosition)
-                {
-                    case 1:
-                        Tapes[0].Position1 = value;
-                        break;
-                    case 2:
-                        Tapes[0].Position2 = value;
-                        break;
-                    case 3:
-                        Tapes[0].Position3 = value;
-                        break;
-                    case 4:
-                        Tapes[0].Position4 = value;
-                        break;
-                    case 5:
-                        Tapes[0].Position5 = value;
-                        break;
-                    case 6:
-                        Tapes[0].Position6 = value;
-                        break;
-                    case 7:
-                        Tapes[0].Position7 = value;
-                        break;
-                    case 8:
-                        Tapes[0].Position8 = value;
-                        break;
-                    case 9:
-                        Tapes[0].Position9 = value;
-                        break;
-                    case 10:
-                        Tapes[0].Position10 = value;
-                        break;
-                }
-            }
-        }
-
         public TuringMachine()
         {
-            Tapes = new ObservableCollection<Tape>()
-            {
-                new Tape()
-                {
-                    Position1 = 0,
-                    Position2 = 0,
-                    Position3 = 0,
-                    Position4 = 0,
-                    Position5 = 0,
-                    Position6 = 0,
-                    Position7 = 0,
-                    Position8 = 0,
-                    Position9 = 0,
-                    Position10 = 0
-                }
-            };
+            Tape = new Tape();
+            Tapes = new ObservableCollection<Tape>() { Tape };
 
             States = new ObservableCollection<State>()
             {
