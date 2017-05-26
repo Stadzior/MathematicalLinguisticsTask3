@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,22 +27,32 @@ namespace MathematicalLinguisticsTask3
         {
             get { return (DataContext as TuringMachine); }
         }
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void btnStartStop_Click(object sender, RoutedEventArgs e)
+        private async void BtnStartStop_Click(object sender, RoutedEventArgs e)
         {
-            
+            await Task.Factory.StartNew(() =>
+            {
+                var _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
+                while (_headPosition > 0)
+                {
+                    BtnStep_Click(null, null);
+                    Thread.Sleep(1000);
+                    _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
+                }
+            });
         }
 
-        private void btnStep_Click(object sender, RoutedEventArgs e)
+        private void BtnStep_Click(object sender, RoutedEventArgs e)
         {
-
+            Dispatcher.Invoke(() => txtState.Text += "a");
         }
 
-        private void btnInsertValue_Click(object sender, RoutedEventArgs e)
+        private void BtnInsertValue_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(txtValue.Text, out int value) && (value < 1024 && value > -1))
                 InputValue(value);
@@ -69,5 +80,7 @@ namespace MathematicalLinguisticsTask3
                 j++;
             }
         }
+
+
     }
 }

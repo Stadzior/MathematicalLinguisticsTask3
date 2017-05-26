@@ -11,7 +11,9 @@ namespace MathematicalLinguisticsTask3
     {
         public ObservableCollection<Tape> Tapes { get; set; }
         public Tape Tape { get; }
+
         public ObservableCollection<State> States { get; set; }
+
         private State _currentState;
         public State CurrentState
         {
