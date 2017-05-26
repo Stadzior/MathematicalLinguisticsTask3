@@ -43,8 +43,7 @@ namespace MathematicalLinguisticsTask3
 
         private void btnInsertValue_Click(object sender, RoutedEventArgs e)
         {
-            int value;
-            if (int.TryParse(txtValue.Text, out value) && (value < 1024 || value > -1))
+            if (int.TryParse(txtValue.Text, out int value) && (value < 1024 && value > -1))
                 InputValue(value);
             else
                 MessageBox.Show("Inputted text should be an integer between 0 - 1023.", "Nope");
@@ -64,7 +63,7 @@ namespace MathematicalLinguisticsTask3
                 result.Add(0);
 
             int j = 0;
-            for (int i = TuringMachine.Tape.VisibleSize; i > TuringMachine.Tape.VisibleSize + 1 - result.Count; i--)
+            for (int i = TuringMachine.Tape.VisibleSize; i > TuringMachine.Tape.VisibleSize - result.Count; i--)
             {
                 TuringMachine.Tape[i] = result[j];
                 j++;
