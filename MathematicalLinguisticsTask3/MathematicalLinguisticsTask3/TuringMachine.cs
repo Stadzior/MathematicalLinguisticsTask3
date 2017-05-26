@@ -58,6 +58,8 @@ namespace MathematicalLinguisticsTask3
             };
 
             InitializeStatesNextSteps();
+
+            CurrentState = States.Single(s => s.Name.Equals("Q0"));
         }
 
         private void InitializeStatesNextSteps()
@@ -132,19 +134,21 @@ namespace MathematicalLinguisticsTask3
                 HeadX += 58.5;
                 _headPosition++;
             }
-
-
         }
 
         public void PerformStep()
         {
-            MoveHead(Direction.Left);
+            StepInfo stepInfo = Tape[HeadPosition] == 1 ? CurrentState.StepInfoForOne : CurrentState.StepInfoForZero;
+            Tape[HeadPosition] = stepInfo.ValueToSave;
+            MoveHead(stepInfo.Direction);
+            CurrentState = stepInfo.State;
         }
 
-        public void ResetHead()
+        public void Reset()
         {
             HeadPosition = 10;
             HeadX = 440;
+            CurrentState = States.Single(s => s.Name.Equals("Q0"));
         }
     }
 }

@@ -28,6 +28,9 @@ namespace MathematicalLinguisticsTask3
             get { return (DataContext as TuringMachine); }
         }
 
+        private bool _started;
+        private CancellationTokenSource _tokenSource;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -35,21 +38,36 @@ namespace MathematicalLinguisticsTask3
 
         private async void BtnStartStop_Click(object sender, RoutedEventArgs e)
         {
-            await Task.Factory.StartNew(() =>
+            _started = !_started;
+
+            if (_started)
             {
-                var _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
-                while (_headPosition > 0)
+                btnStartStop.Content = "Stop";
+                _tokenSource = new CancellationTokenSource();
+
+                await Task.Factory.StartNew(() =>
                 {
-                    Dispatcher.Invoke(() => TuringMachine.PerformStep());
-                    Thread.Sleep(1000);
-                    _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
-                }
-            });
+                    var _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
+                    while (_headPosition > 0 && !_tokenSource.IsCancellationRequested)
+                    {
+                        Dispatcher.Invoke(() => TuringMachine.PerformStep());
+                        Thread.Sleep(1000);
+                        _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
+                    }
+                    Dispatcher.Invoke(() => false);
+                },_tokenSource.Token);
+            }
+            else
+            {
+                btnStartStop.Content = "Start";
+                _tokenSource.Cancel();
+            }
         }
 
         private void BtnStep_Click(object sender, RoutedEventArgs e)
         {
             TuringMachine.PerformStep();
+            btnStep.IsEnabled = TuringMachine.HeadPosition > 0;
         }
 
         private void UpdateArrowPosition()
@@ -59,13 +77,14 @@ namespace MathematicalLinguisticsTask3
 
         private void BtnInsertValue_Click(object sender, RoutedEventArgs e)
         {
-            if (int.TryParse(txtValue.Text, out int value) && (value < 1024 && value > -1))
+            if (int.TryParse(txtValue.Text, out int value) && (value < 1021 && value > -1))
             {
                 InputValue(value);
-                TuringMachine.ResetHead();
+                TuringMachine.Reset();
+                btnStep.IsEnabled = true;
             }
             else
-                MessageBox.Show("Inputted text should be an integer between 0 - 1023.", "Nope");
+                MessageBox.Show("Inputted text should be an integer between 0 - 1020.", "Nope");
         }
 
         private void InputValue(int value)

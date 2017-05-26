@@ -40,7 +40,7 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="BtnStartStop_Click"
-            Content="Start/Stop"
+            Content="Start"
             FontSize="24" />
         <TextBox
             x:Name="txtState"
@@ -92,7 +92,6 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontSize="24"
-            Text="{Binding CurrentState.Name}"
             TextWrapping="Wrap" />
     </Grid>
 </Window>
