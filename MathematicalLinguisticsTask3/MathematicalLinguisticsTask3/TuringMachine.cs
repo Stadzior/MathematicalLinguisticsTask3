@@ -34,6 +34,26 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
+        private int _headX = 440;
+        public int HeadX
+        {
+            get { return _headX; }
+            set
+            {
+                SetField(ref _headX, value);
+            }
+        }
+
+        private int _headY = 15;
+        public int HeadY
+        {
+            get { return _headY; }
+            set
+            {
+                SetField(ref _headY, value);
+            }
+        }
+
         public TuringMachine()
         {
             Tape = new Tape();
@@ -110,14 +130,17 @@ namespace MathematicalLinguisticsTask3
             };
         }
 
-        public void MoveHead(StepInfo stepInfo)
+        public void MoveHead(Direction direction)
         {
-            if (stepInfo.Direction == Direction.Left)
+            if (direction == Direction.Left)
                 _headPosition--;
             else
                 _headPosition++;
+        }
 
-            CurrentState = stepInfo.State;
+        public void PerformStep()
+        {
+
         }
     }
 }

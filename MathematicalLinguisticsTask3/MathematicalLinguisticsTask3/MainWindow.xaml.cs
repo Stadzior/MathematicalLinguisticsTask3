@@ -40,7 +40,7 @@ namespace MathematicalLinguisticsTask3
                 var _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
                 while (_headPosition > 0)
                 {
-                    BtnStep_Click(null, null);
+                    Dispatcher.Invoke(() => TuringMachine.PerformStep());
                     Thread.Sleep(1000);
                     _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
                 }
@@ -49,7 +49,12 @@ namespace MathematicalLinguisticsTask3
 
         private void BtnStep_Click(object sender, RoutedEventArgs e)
         {
-            Dispatcher.Invoke(() => txtState.Text += "a");
+            TuringMachine.PerformStep();
+        }
+
+        private void UpdateArrowPosition()
+        {
+            throw new NotImplementedException();
         }
 
         private void BtnInsertValue_Click(object sender, RoutedEventArgs e)

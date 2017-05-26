@@ -65,8 +65,8 @@
         <Canvas>
             <Image
                 x:Name="imgHead"
-                Canvas.Left="443"
-                Canvas.Top="10"
+                Canvas.Left="{Binding HeadX}"
+                Canvas.Top="{Binding HeadY}"
                 Width="38"
                 Height="32"
                 HorizontalAlignment="Left"
