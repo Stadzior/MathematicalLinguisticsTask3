@@ -51,7 +51,7 @@ namespace MathematicalLinguisticsTask3
                     while (_headPosition > 0 && !_tokenSource.IsCancellationRequested)
                     {
                         Dispatcher.Invoke(() => TuringMachine.PerformStep());
-                        Thread.Sleep(1000);
+                        Thread.Sleep(2000);
                         _headPosition = Dispatcher.Invoke(() => TuringMachine.HeadPosition);
                     }
                     Dispatcher.Invoke(() => false);
