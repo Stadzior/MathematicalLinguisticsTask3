@@ -34,23 +34,13 @@ namespace MathematicalLinguisticsTask3
             }
         }
 
-        private int _headX = 440;
-        public int HeadX
+        private double _headX = 442;
+        public double HeadX
         {
             get { return _headX; }
             set
             {
                 SetField(ref _headX, value);
-            }
-        }
-
-        private int _headY = 15;
-        public int HeadY
-        {
-            get { return _headY; }
-            set
-            {
-                SetField(ref _headY, value);
             }
         }
 
@@ -133,14 +123,28 @@ namespace MathematicalLinguisticsTask3
         public void MoveHead(Direction direction)
         {
             if (direction == Direction.Left)
+            {
                 _headPosition--;
+                HeadX -= 58.5;
+            }
             else
+            {
+                HeadX += 58.5;
                 _headPosition++;
+            }
+
+
         }
 
         public void PerformStep()
         {
+            MoveHead(Direction.Left);
+        }
 
+        public void ResetHead()
+        {
+            HeadPosition = 10;
+            HeadX = 440;
         }
     }
 }

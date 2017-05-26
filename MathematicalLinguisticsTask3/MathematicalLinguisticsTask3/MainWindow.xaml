@@ -9,6 +9,7 @@
     Width="647"
     Height="214.677"
     DataContext="{StaticResource TuringMachine}"
+    ResizeMode="CanMinimize"
     mc:Ignorable="d">
     <Grid Margin="0,0,2,0">
         <Button
@@ -66,7 +67,7 @@
             <Image
                 x:Name="imgHead"
                 Canvas.Left="{Binding HeadX}"
-                Canvas.Top="{Binding HeadY}"
+                Canvas.Top="15"
                 Width="38"
                 Height="32"
                 HorizontalAlignment="Left"

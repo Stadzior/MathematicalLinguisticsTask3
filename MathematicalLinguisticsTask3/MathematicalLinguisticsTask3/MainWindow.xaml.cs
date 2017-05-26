@@ -60,7 +60,10 @@ namespace MathematicalLinguisticsTask3
         private void BtnInsertValue_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(txtValue.Text, out int value) && (value < 1024 && value > -1))
+            {
                 InputValue(value);
+                TuringMachine.ResetHead();
+            }
             else
                 MessageBox.Show("Inputted text should be an integer between 0 - 1023.", "Nope");
         }
@@ -85,7 +88,5 @@ namespace MathematicalLinguisticsTask3
                 j++;
             }
         }
-
-
     }
 }
