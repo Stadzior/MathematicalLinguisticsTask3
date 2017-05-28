@@ -70,11 +70,6 @@ namespace MathematicalLinguisticsTask3
             btnStep.IsEnabled = TuringMachine.HeadPosition > 0;
         }
 
-        private void UpdateArrowPosition()
-        {
-            throw new NotImplementedException();
-        }
-
         private void BtnInsertValue_Click(object sender, RoutedEventArgs e)
         {
             if (int.TryParse(txtValue.Text, out int value) && (value < 1021 && value > -1))
